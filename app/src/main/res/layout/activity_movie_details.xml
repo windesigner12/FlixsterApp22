@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Movie_Details">
+
+    <TextView
+        android:id="@+id/tvTitleD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        tools:text="The Fast And Furios 9" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="10"
+        android:rating="8" />
+
+    <TextView
+        android:id="@+id/tvOverviewD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="This is the Detaisl about the movie you will find other information regardles the work you ar doing in" />
+</LinearLayout>
