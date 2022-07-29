@@ -13,7 +13,7 @@
         android:layout_height="250dp" />
 
     <TextView
-        android:id="@+id/tvTitleD"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
@@ -29,7 +29,7 @@
         android:rating="8" />
 
     <TextView
-        android:id="@+id/tvOverviewD"
+        android:id="@+id/tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="This is the Detaisl about the movie you will find other information regardles the work you ar doing in" />

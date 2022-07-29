@@ -11,6 +11,8 @@ import java.util.List;
 @Parcel
 public class Movie {
 
+
+    int movieId;
     String title;
     String overview;
     String poster_path;
@@ -26,6 +28,7 @@ public class Movie {
         overview = jsonObject.getString("overview");
         backdropImage = jsonObject.getString("backdrop_path");
         vote_average = Double.parseDouble(jsonObject.getString("vote_average"));
+        movieId = Integer.parseInt(jsonObject.getString("id"));
 
     }
 
@@ -65,5 +68,9 @@ public class Movie {
 
     public double getVote(){
         return vote_average;
+    }
+
+    public int getMovieId() {
+        return movieId;
     }
 }

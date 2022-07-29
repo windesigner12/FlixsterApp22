@@ -3,7 +3,6 @@ package com.winshelosl.flixsterapp.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +87,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
-        RelativeLayout containerP;
+        RelativeLayout container;
 
 
         public ViewHolderPortrait(@NonNull View itemView) {
@@ -97,7 +96,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
-            containerP = itemView.findViewById(R.id.containerP);
+            container = itemView.findViewById(R.id.container);
         }
 
         public void bind(Movie movie) {
@@ -114,11 +113,12 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     .load(getUrlPath)
                     .into(ivPoster);
 
-            containerP.setOnClickListener(new View.OnClickListener() {
+            container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                Intent i = new Intent(context, Movie_Details.class);
-                context.startActivity(i);
+                    Intent i = new Intent(context, Movie_Details.class);
+                    i.putExtra("movie", Parcels.wrap(movie));
+                    context.startActivity(i);
                 }
             });
 
@@ -130,12 +130,12 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public class ViewHolderVoteCount extends RecyclerView.ViewHolder{
 
         ImageView ivPosterVote;
-        RelativeLayout containerL;
+        RelativeLayout container;
 
         public ViewHolderVoteCount(@NonNull View itemView) {
             super(itemView);
             ivPosterVote = itemView.findViewById(R.id.ivPosterVote);
-            containerL = itemView.findViewById(R.id.containerL);
+            container = itemView.findViewById(R.id.container);
         }
 
         public void bind(Movie movie) {
@@ -153,7 +153,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     .into(ivPosterVote);
 
 
-            containerL.setOnClickListener(new View.OnClickListener() {
+            container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, Movie_Details.class);
