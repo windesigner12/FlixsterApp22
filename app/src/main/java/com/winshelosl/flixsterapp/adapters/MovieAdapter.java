@@ -1,8 +1,10 @@
 package com.winshelosl.flixsterapp.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +13,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.winshelosl.flixsterapp.MainActivity;
 import com.winshelosl.flixsterapp.Movie_Details;
 import com.winshelosl.flixsterapp.R;
 import com.winshelosl.flixsterapp.models.Movie;
@@ -39,7 +43,6 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             return R.layout.item_movie;
         }
     }
-
 
 
     @NonNull
@@ -118,7 +121,11 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 public void onClick(View view) {
                     Intent i = new Intent(context, Movie_Details.class);
                     i.putExtra("movie", Parcels.wrap(movie));
-                    context.startActivity(i);
+
+
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, (View) ivPoster, "profile");
+                    context.startActivity(i, options.toBundle());
+
                 }
             });
 
@@ -158,7 +165,10 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 public void onClick(View view) {
                     Intent i = new Intent(context, Movie_Details.class);
                     i.putExtra("movie", Parcels.wrap(movie));
-                    context.startActivity(i);
+                    Log.d("ADAPTER", ivPosterVote.toString());
+
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, (View) ivPosterVote, "profile");
+                    context.startActivity(i, options.toBundle());
                 }
             });
         }

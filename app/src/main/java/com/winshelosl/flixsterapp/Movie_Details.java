@@ -49,7 +49,7 @@ public class Movie_Details extends YouTubeBaseActivity {
 
 
         AsyncHttpClient client = new AsyncHttpClient();
-
+int IdMovie = movie.getMovieId();
         client.get(String.format(VIDEOS_URL, movie.getMovieId()), new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
@@ -60,6 +60,7 @@ public class Movie_Details extends YouTubeBaseActivity {
                     }
                     String youtubeKey = results.getJSONObject(0).getString("key");
                     InitializeYoutubeVideo(youtubeKey);
+                    Log.d(  "Details Activiti" , String.valueOf(IdMovie));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -74,14 +75,6 @@ public class Movie_Details extends YouTubeBaseActivity {
         });
 
 
-
-
-
-
-
-
-
-
     }
 
     private void InitializeYoutubeVideo(String youtubeKey) {
@@ -89,13 +82,13 @@ public class Movie_Details extends YouTubeBaseActivity {
         youTubePlayerView.initialize(YOUTUBE_API_URL, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                Log.d("Details Movie", "Onsucces");
+                Log.d("Details Movie", "OnSuccess");
                 youTubePlayer.cueVideo(youtubeKey);
             }
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                Log.d("Details Movie", "OnFailure");
+                Log.d("Details Movie", "OnFailure Initilize");
             }
         });
     }
