@@ -11,12 +11,14 @@
 
     <ImageView
         android:id="@+id/ivPoster"
+        android:transitionName="poster"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvTitle"
+        android:transitionName="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -29,6 +31,7 @@
 
     <TextView
         android:id="@+id/tvOverview"
+        android:transitionName="overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
@@ -36,7 +39,9 @@
         android:layout_marginTop="6dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:paddingLeft="10dp"
+        android:maxLines="7"
         android:textColor="@color/white"
+        android:ellipsize="end"
         tools:text="Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox." />
 
 </RelativeLayout>

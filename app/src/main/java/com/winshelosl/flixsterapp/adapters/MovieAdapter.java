@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -121,9 +122,11 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 public void onClick(View view) {
                     Intent i = new Intent(context, Movie_Details.class);
                     i.putExtra("movie", Parcels.wrap(movie));
+                    Pair<View, String> trans1 = Pair.create(tvTitle , "title");
+                    Pair<View, String> trans2 = Pair.create(tvOverview , "overview");
+                    Pair<View, String> trans3 = Pair.create(ivPoster , "poster");
 
-
-                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, (View) ivPoster, "profile");
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, trans1,trans2,trans3);
                     context.startActivity(i, options.toBundle());
 
                 }

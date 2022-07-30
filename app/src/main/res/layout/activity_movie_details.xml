@@ -16,8 +16,12 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:transitionName="title"
         tools:text="The Fast And Furios 9" />
 
     <RatingBar
@@ -27,11 +31,18 @@
         android:layout_height="wrap_content"
         android:isIndicator="true"
         android:numStars="10"
-        android:rating="8" />
+        android:rating="8"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"/>
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="This is the Detaisl about the movie you will find other information regardles the work you ar doing in" />
+        android:transitionName="overview"
+        tools:text="This is the Detaisl about the movie you will find other information regardles the work you ar doing in"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="17sp"/>
 </LinearLayout>

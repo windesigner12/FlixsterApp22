@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2195" />
+        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2195" />
+        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/drawable/ic_placeholder_background.xml" value="0.2195" />
+        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/drawable/ic_play_background.xml" value="0.2195" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/layout-land/item_movie.xml" value="0.21516754850088182" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/layout/activity_movie_details.xml" value="0.15447154471544716" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/layout/item_movie.xml" value="0.25181159420289856" />
-        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/layout/item_vote.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp-master/FlixsterApp-master/app/src/main/res/layout/item_vote.xml" value="0.2" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1225" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp/app/src/main/res/drawable/ic_placeholder_background.xml" value="0.116" />
         <entry key="..\:/Users/Shon/AndroidStudioProjects/FlixsterApp/app/src/main/res/layout-land/item_movie.xml" value="0.1" />

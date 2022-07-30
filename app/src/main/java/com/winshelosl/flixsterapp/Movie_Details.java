@@ -26,7 +26,7 @@ public class Movie_Details extends YouTubeBaseActivity {
      RatingBar ratingBar;
      YouTubePlayerView youTubePlayerView;
 
-     private static String YOUTUBE_API_URL = "AIzaSyDWOho85kIR3Htcx9Su1TL6cEKWHs3CT7M";
+    private static String YOUTUBE_API_URL = "AIzaSyDWOho85kIR3Htcx9Su1TL6cEKWHs3CT7M";
      public static String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
     @Override
@@ -59,8 +59,7 @@ int IdMovie = movie.getMovieId();
                         return;
                     }
                     String youtubeKey = results.getJSONObject(0).getString("key");
-                    InitializeYoutubeVideo(youtubeKey);
-                    Log.d(  "Details Activiti" , String.valueOf(IdMovie));
+                    InitializeYoutubeVideo(youtubeKey, movie);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -77,13 +76,18 @@ int IdMovie = movie.getMovieId();
 
     }
 
-    private void InitializeYoutubeVideo(String youtubeKey) {
+    private void InitializeYoutubeVideo(String youtubeKey, Movie movie) {
 
         youTubePlayerView.initialize(YOUTUBE_API_URL, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                Log.d("Details Movie", "OnSuccess");
-                youTubePlayer.cueVideo(youtubeKey);
+              if (movie.getVote() > 6.0){
+                  youTubePlayer.loadVideo(youtubeKey);
+              } else {
+                  youTubePlayer.cueVideo(youtubeKey);
+              }
+
+
             }
 
             @Override
