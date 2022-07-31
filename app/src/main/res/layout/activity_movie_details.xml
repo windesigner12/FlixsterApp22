@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Movie_Details">
+    tools:context=".Movie_Details"
+    android:background="@color/black_variant">
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
@@ -22,7 +23,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:transitionName="title"
-        tools:text="The Fast And Furios 9" />
+        tools:text="The Fast And Furios 9"
+        android:textColor="@color/white"/>
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -44,5 +46,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:textColor="@color/white"/>
+
 </LinearLayout>
